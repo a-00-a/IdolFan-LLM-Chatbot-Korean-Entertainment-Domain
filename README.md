@@ -2,6 +2,7 @@
 
 ## Overview
 Fine-tuned open-source LLM to emulate a specific idol's personality and speech style for fan interactions in Korean.
+Covers end-to-end workflow: dataset design, model fine-tuning, evaluation, and deployment.
 
 ## Motivation
 Fans want to interact with idols in natural dialogue. This project demonstrates end-to-end LLM application in entertainment content.
@@ -28,12 +29,20 @@ Fans want to interact with idols in natural dialogue. This project demonstrates 
 -Recent LLM research insights
 -Applicability to fan-oriented chat services
 
-## 📂 Day 1 : 환경 설정
-- GPU 확인 및 환경 세팅
-- transformer, torch, datasets import 및 버전 확인
-- Colab Notebook: [Day1] (https://colab.research.google.com/github/a-00-a/LLM_Practice/blob/main/day1_environment_setup.ipynb)
+## Project workflow
+1. **Environment Setup**
+- Libraries: transformers. torch, datasets, gradio, peft
+- GPU check
+- [Open Day1 Colab Notebook](notebooks/00_EnvironmentSetup.ipynb)
 
-## 📂 Day 2 : 데이터셋 파이프라인
-- Hugging Face Dataset 로딩
-- 텍스트 정제 및 토크나이징
-- Colab Notebook: [Day2] (https://colab.research.google.com/github/a-00-a/LLM_Practice/blob/main/day2_dataset_pipeline.ipynb) 
+2. **Dataset pipline**
+- Collect and preprocess idol SNS posts, interviews, and fan Q&A
+- Structure: fan question -> idol-style answer
+- [Open Day2 Colab Notebook](notebooks/01_DatasetPipeline.ipynb)
+
+## Sample Dataset
+- Located in 'data/fan_qa_samples.json'
+- JSON format: '{"prompt": fan_question, "completion": idol_answer}'
+
+## Outputs
+- Screenshots and sample outputs in 'outputs/'
