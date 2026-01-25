@@ -18,20 +18,19 @@ Covers dataset preparation, LoRA fine-tuning, and a simple Gradio chatbot demo.
 ]
 
 ## Model & Training
--Base model: skt/kogpt2-base-v2 (small Korean GPT-2)
--Fine-tuning: LoRA / PEFT
--Dataset:20 prompt-completion pairs
--Training script: src/fine_tune.py
--Note: Only 1 epoch for demonstration purposes
+- Base model: skt/kogpt2-base-v2 (small Korean GPT-2)
+- Fine-tuning: LoRA / PEFT
+- Dataset:20 prompt-completion pairs
+- Training script: src/fine_tune.py
+- Note: Only 1 epoch for demonstration purposes
 
 ## Gradio Demo
--Run the chatbot interface:
-python src/gradioapp.py
--Enter a fan question in Korean -> get idol-style response
+- Run the chatbot interface: python src/gradioapp.py
+- Enter a fan question in Korean -> get idol-style response
 
 ## Notes
--Current version is a demo / work-in-progress
--Future improvements: larger dataset, RAG integration, deployment on cloud
+- Current version is a demo / work-in-progress
+- Future improvements: larger dataset, RAG integration, deployment on cloud
 
 ## Project workflow
 1. **Environment Setup**
