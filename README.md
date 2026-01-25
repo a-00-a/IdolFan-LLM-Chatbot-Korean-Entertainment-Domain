@@ -8,7 +8,7 @@ Covers dataset preparation, LoRA fine-tuning, and a simple Gradio chatbot demo.
 ## Dataset
 - **Source**: Idol SNS posts, interviews, fan Q&A
 - **Structure**: '{"prompt": fan_question, "completion": idol_answer}'
-- **Location**: 'data/sample_data.json'
+- **Location**: './data/sample_data.json'
 - Sample entries:
 
 '''json
