@@ -1,13 +1,32 @@
+# gradio_app.py
+
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
 import gradio as gr
 
-def launch_chatbot(model, tokenizer, max_length=50):
-    def chatbot_response(prompt):
-        inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-        outputs = model.generate(**inputs, max_length=max_length)
-        return tokenizer.decode(outputs[0], skip_special_tokens=True)
+# 모델 로드
+model_name_or_path = "./idolfan_lora"  # fine_tuen.py에서 저장한 체크포인트
+model = AutoModelForCausalLM.from_pretrained(model_name_or_path)
+tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
 
-    iface = gr.Interface(fn=chatbot_response, inputs="text", outputs="text",
-                         title="IdolFan Chatbot",
-                         description="팬 질문에 맞춰 아이돌 말투로 대답하는 챗봇")
-    iface.launch()
-  
+# 챗봇 함수
+def chatbot(prompt):
+    inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+    outputs = model.generate(
+        **inputs,
+        max_length=50,
+        do_sample=True,
+        top_p=0.9,
+        temperature=0.8
+    )
+    return tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+# Gradio 앱 실행
+if __name__ == "__main__":
+    gr.Interface(
+        fn=chatbot,
+        inputs="text",
+        outputs="text",
+        title="Idol Fan Chatbot",
+        description="LoRA fine-tuned idol-style chatbot"
+    ).launch()
