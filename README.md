@@ -1,32 +1,32 @@
-# Content-Aware LLM pipeline
+# IdolFan LLM Chatbot: Korean Entertainment Domain
 
 ## Overview
-This project explores fine-tuning and open-source LLM for content generation tasks using domain-specific text data.
+Fine-tuned open-source LLM to emulate a specific idol's personality and speech style for fan interactions in Korean.
 
 ## Motivation
-How domain knowledge can improve generation quality in content-oriented services.
+Fans want to interact with idols in natural dialogue. This project demonstrates end-to-end LLM application in entertainment content.
 
 ## Dataset
--Data source
--Design rationale
--Preprocessing steps
+-Source: Idol SNS posts, interviews, fan Q&A
+-Design: Fan questions -> Idol-style responses
+-Preprocessing: Text cleaning, tokenization, formatting
 
 ## Model & Training
--Base model
--Fine-tuning method (LoRA)
+-Base model: small Korean-capable LLM
+-Fine-tuning: LoRA / PEFT
 -Training setup
 
 ## Evaluation
--Baseline vs Fine-tuned comparison
--Qualitative analysis
+-Baseline vs fine-tuned qualitative comparison
+-Example prompts and outputs
 
 ## Deployment
 -Gradio interface
--Inference examples
+-Korean language interface examples
 
 ## Notes on LLM Trends
--Recent research insights
--Applicability to real services
+-Recent LLM research insights
+-Applicability to fan-oriented chat services
 
 ## 📂 Day 1 : 환경 설정
 - GPU 확인 및 환경 세팅
