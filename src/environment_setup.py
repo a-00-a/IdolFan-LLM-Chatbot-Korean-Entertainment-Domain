@@ -12,4 +12,5 @@ def check_gpu():
     print(f"GPU available: {available}, GPU name: {name}")
     return available, name
 
-check_gpu()
+if __name__ == "__main__":
+    check_gpu()
