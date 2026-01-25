@@ -1,3 +1,33 @@
+# Content-Aware LLM pipeline
+
+## Overview
+This project explores fine-tuning and open-source LLM for content generation tasks using domain-specific text data.
+
+## Motivation
+How domain knowledge can improve generation quality in content-oriented services.
+
+## Dataset
+-Data source
+-Design rationale
+-Preprocessing steps
+
+## Model & Training
+-Base model
+-Fine-tuning method (LoRA)
+-Training setup
+
+## Evaluation
+-Baseline vs Fine-tuned comparison
+-Qualitative analysis
+
+## Deployment
+-Gradio interface
+-Inference examples
+
+## Notes on LLM Trends
+-Recent research insights
+-Applicability to real services
+
 ## 📂 Day 1 : 환경 설정
 - GPU 확인 및 환경 세팅
 - transformer, torch, datasets import 및 버전 확인
