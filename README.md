@@ -1,48 +1,51 @@
-# IdolFan LLM Chatbot: Korean Entertainment Domain
+# IdolFan LLM Chatbot
 
-## Overview
-Fine-tuned open-source LLM to emulate a specific idol's personality and speech style for fan interactions in Korean.
-Covers end-to-end workflow: dataset design, model fine-tuning, evaluation, and deployment.
+A small Korean LLM fine-tuned to emulate an idol's personality and respond to fan questions.
+Covers dataset preparation, LoRA fine-tuning, and a simple Gradio chatbot demo.
 
-## Motivation
-Fans want to interact with idols in natural dialogue. This project demonstrates end-to-end LLM application in entertainment content.
+## Project Structure
 
 ## Dataset
--Source: Idol SNS posts, interviews, fan Q&A
--Design: Fan questions -> Idol-style responses
--Preprocessing: Text cleaning, tokenization, formatting
+- **Source**: Idol SNS posts, interviews, fan Q&A
+- **Structure**: '{"prompt": fan_question, "completion": idol_answer}'
+- **Location**: 'data/sample_data.json'
+- Sample entries:
+
+'''json
+[
+  {"prompt": "오늘 기분 어때요?", "completion": "팬들 생각하면서 힘냈어요!"}
+  {"prompt": "추천 노래 있어요?", "completion": "제 최애 노래는 'Shakira-Zoo'예요!"}
+]
 
 ## Model & Training
--Base model: small Korean-capable LLM
+-Base model: skt/kogpt2-base-v2 (small Korean GPT-2)
 -Fine-tuning: LoRA / PEFT
--Training setup
+-Dataset:20 prompt-completion pairs
+-Training script: src/fine_tune.py
+-Note: Only 1 epoch for demonstration purposes
 
-## Evaluation
--Baseline vs fine-tuned qualitative comparison
--Example prompts and outputs
+## Gradio Demo
+-Run the chatbot interface:
+python src/gradioapp.py
+-Enter a fan question in Korean -> get idol-style response
 
-## Deployment
--Gradio interface
--Korean language interface examples
-
-## Notes on LLM Trends
--Recent LLM research insights
--Applicability to fan-oriented chat services
+## Notes
+-Current version is a demo / work-in-progress
+-Future improvements: larger dataset, RAG integration, deployment on cloud
 
 ## Project workflow
 1. **Environment Setup**
 - Libraries: transformers. torch, datasets, gradio, peft
 - GPU check
-- [Open Day1 Colab Notebook](notebooks/00_EnvironmentSetup.ipynb)
+- [Open 00 Colab Notebook](notebooks/00_EnvironmentSetup.ipynb)
 
 2. **Dataset pipline**
 - Collect and preprocess idol SNS posts, interviews, and fan Q&A
 - Structure: fan question -> idol-style answer
-- [Open Day2 Colab Notebook](notebooks/01_DatasetPipeline.ipynb)
+- [Open 01 Colab Notebook](notebooks/01_DatasetPipeline.ipynb)
 
-## Sample Dataset
-- Located in 'data/fan_qa_samples.json'
-- JSON format: '{"prompt": fan_question, "completion": idol_answer}'
+3. **Fine-tuning prep**
+- [Open 02 Colab Notebook](notebooks/02_FineTuningPrep.ipynb)
 
-## Outputs
-- Screenshots and sample outputs in 'outputs/'
+4. **Fine-tuning with Gradio app**
+- [Open 03 Colab Notebook](notebooks/03_FineTuning_Gradio.ipynb)
