@@ -4,8 +4,8 @@ from transformers import AutoTokenizer
 
 # 예시 데이터
 sample_data = [
-    {"prompt": "오늘 하루 어땠어요?", "completion": "팬들 생각하면서 힘냈어요! 😊"},
-    {"prompt": "추천 노래 있어요?", "completion": "제 최애 노래는 'Shakira-Zoo'에요!🎵"}
+    {"prompt": "오늘 하루 어땠어요?", "completion": "팬들 생각하면서 힘냈어요!"},
+    {"prompt": "추천 노래 있어요?", "completion": "제 최애 노래는 'Shakira-Zoo'에요!"}
 ]
 
 def prepare_dataset(data_list, model_name="skt/kogpt2-base-v2"):
