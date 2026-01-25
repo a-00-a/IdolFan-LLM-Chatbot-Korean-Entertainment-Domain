@@ -8,7 +8,7 @@ Covers dataset preparation, LoRA fine-tuning, and a simple Gradio chatbot demo.
 ## Dataset
 - **Source**: Idol SNS posts, interviews, fan Q&A
 - **Structure**: '{"prompt": fan_question, "completion": idol_answer}'
-- **Location**: (data/sample_data.json)
+- **Location**: 'data/sample_data.json'
 - Sample entries:
 
 '''json
@@ -21,11 +21,11 @@ Covers dataset preparation, LoRA fine-tuning, and a simple Gradio chatbot demo.
 - Base model: skt/kogpt2-base-v2 (small Korean GPT-2)
 - Fine-tuning: LoRA / PEFT
 - Dataset:20 prompt-completion pairs
-- Training script: (src/fine_tune.py)
+- Training script: src/fine_tune.py
 - Note: Only 1 epoch for demonstration purposes
 
 ## Gradio Demo
-- Run the chatbot interface: python (src/gradioapp.py)
+- Run the chatbot interface: python src/gradioapp.py
 - Enter a fan question in Korean -> get idol-style response
 
 ## Notes
