@@ -36,4 +36,4 @@ How domain knowledge can improve generation quality in content-oriented services
 ## 📂 Day 2 : 데이터셋 파이프라인
 - Hugging Face Dataset 로딩
 - 텍스트 정제 및 토크나이징
--Colab Notebook: [Day2] (https://colab.research.google.com/github/a-00-a/LLM_Practice/blob/main/day2_dataset_pipeline.ipynb) 
+- Colab Notebook: [Day2] (https://colab.research.google.com/github/a-00-a/LLM_Practice/blob/main/day2_dataset_pipeline.ipynb) 
